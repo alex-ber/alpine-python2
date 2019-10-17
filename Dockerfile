@@ -72,10 +72,10 @@ RUN set -ex && \
 RUN set -ex && \
     pip install --upgrade pip==19.2.3 setuptools==41.2.0
 
-RUN set -ex && \
-    #https://github.com/pypa/pip/issues/6667
-    pip install numpy==1.9.3
-    #pip install -r /etc/requirements.txt
+#RUN set -ex && \
+#    #https://github.com/pypa/pip/issues/6667
+#    pip install numpy==1.9.3
+#    #pip install -r /etc/requirements.txt
 
 #Cleanup
 RUN set -ex && rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
@@ -95,6 +95,6 @@ CMD ["/bin/sh"]
 #smoke test
 #docker exec -it $(docker ps -q -n=1) pip config list
 #docker exec -it $(docker ps -q -n=1) bash
-#docker tag ipython2 alexberkovich/alpine-python2:0.0.1
+#docker tag ipython2 alexberkovich/alpine-python2:0.0.2
 #docker push alexberkovich/alpine-python2
 # EOF
